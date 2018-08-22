@@ -1,19 +1,19 @@
 import requests
 
-url = 'https://api.darksky.net/forecast/<api>/34.0575651,-117.820741'
+url = 'https://api.darksky.net/forecast/bdd13177f9f4a33b5211a473d9338e55/34.0575651,-117.820741'
 
-json_data = requests.get(url).json()
-json_data = requests.get(url).json()
+jsonData = requests.get(url).json()
 
 # pull current and get current temp
 text = "Current Weather at Cal Poly: "
-get_all = json_data['currently']
-temp = get_all.get('temperature')
+getAll = jsonData['currently']
+temp = getAll.get('temperature')
 
 # pull daily to obtain min and max
-get_daily_data = json_data['daily']['data']
+getDailyData = jsonData['daily']['data']
 
 print(text)
-print("Temp: ", temp, '˚F')
+print("Temp: ", int(temp), '˚F')
 print("High: ", '˚F')
-print(get_daily_data)
+
+print(getDailyData)
