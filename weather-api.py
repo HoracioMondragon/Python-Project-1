@@ -11,9 +11,12 @@ temp = getAll.get('temperature')
 
 # pull daily to obtain min and max
 getDailyData = jsonData['daily']['data']
+tempHigh = getDailyData[0]['temperatureHigh']
+tempLow = getDailyData[0]['temperatureLow']
 
 print(text)
 print("Temp: ", int(temp), '˚F')
-print("High: ", '˚F')
+print("")
+print("High: ", int(tempHigh), '˚F')
+print("Low: ", int(tempLow), '˚F')
 
-print(getDailyData)
